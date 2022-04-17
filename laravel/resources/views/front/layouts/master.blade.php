@@ -1,85 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
 
-<head>
-<meta charset="utf-8">
-<title>@yield('title')</title>
-<!-- Stylesheets -->
-<link href="/front/assets/css/bootstrap.css" rel="stylesheet">
-<link href="/front/assets/css/style.css" rel="stylesheet">
-<link href="/front/assets/css/responsive.css" rel="stylesheet">
-<!-- Color Switcher Mockup -->
-<link href="/front/assets/css/color-switcher-design.css" rel="stylesheet">
-<!-- Color Themes -->
-<link id="theme-color-file" href="/front/assets/css/color-themes/default-theme.css" rel="stylesheet">
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="/front/assets/images/favicon.png">
 
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="/front/assets/js/respond.js"></script><![endif]-->
+    <!-- CSS ============================================ -->
+    <link rel="stylesheet" href="/front/assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/animation.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/feature.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/magnify.min.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/slick.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/slick-theme.css">
+    <link rel="stylesheet" href="/front/assets/css/plugins/lightbox.css">
+    <link rel="stylesheet" href="/front/assets/css/style.css">
 </head>
-<body class="hidden-bar-wrapper">
 
-<div class="page-wrapper">
- 	
-    <!-- Preloader -->
-    <div class="preloader"></div>
- 	
- 	<!-- Main Header-->
-  @include('front.layouts.header')
-    <!-- End Main Header -->
-	
-	<!-- Sidebar Cart Item -->
-@include('front.layouts.sidebar')
-	<!-- END sidebar widget item -->
-	
-@yield('content')
-	<!-- Main Footer -->
-  
-@include('front.layouts.footer')
+<body class="active-dark-mode">
+    <main class="page-wrapper">
+       @include('front.layouts.header')
 
+    @yield('content')  
 
-	
-</div>
-<!--End pagewrapper-->
+      @include('front.layouts.footer')
+    </main>
 
-
-
-<!-- Search Popup -->
-<div class="search-popup">
-	<button class="close-search style-two"><span class="flaticon-multiply"></span></button>
-	<button class="close-search"><span class="flaticon-up-arrow-1"></span></button>
-	<form method="post" action="https://expert-themes.com/html/globex/blog.html">
-		<div class="form-group">
-			<input type="search" name="search-field" value="" placeholder="اینجا جستجو کنید" required="">
-			<button type="submit"><i class="fa fa-search"></i></button>
-		</div>
-	</form>
-</div>
-<!-- End Header Search -->
-
-<!--Scroll to top-->
-<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-arrow-up"></span></div>
-
-<script src="/front/assets/js/jquery.js"></script>
-<script src="/front/assets/js/popper.min.js"></script>
-<script src="/front/assets/js/bootstrap.min.js"></script>
-<script src="/front/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="/front/assets/js/jquery.fancybox.js"></script>
-<script src="/front/assets/js/appear.js"></script>
-<script src="/front/assets/js/parallax.min.js"></script>
-<script src="/front/assets/js/tilt.jquery.min.js"></script>
-<script src="/front/assets/js/jquery.paroller.min.js"></script>
-<script src="/front/assets/js/owl.js"></script>
-<script src="/front/assets/js/wow.js"></script>
-<script src="/front/assets/js/nav-tool.js"></script>
-<script src="/front/assets/js/jquery-ui.js"></script>
-<script src="/front/assets/js/script.js"></script>
-<script src="/front/assets/js/color-settings.js"></script>
-
+    <!-- All Scripts  -->
+    <!-- Start Top To Bottom Area  -->
+    <div class="rn-back-top">
+        <i class="feather-arrow-up"></i>
+    </div>
+    <!-- End Top To Bottom Area  -->
+    <!-- JS
+============================================ -->
+    <script src="/front/assets/js/vendor/modernizr.min.js"></script>
+    <script src="/front/assets/js/vendor/jquery.min.js"></script>
+    <script src="/front/assets/js/vendor/bootstrap.min.js"></script>
+    <script src="/front/assets/js/vendor/popper.min.js"></script>
+    <script src="/front/assets/js/vendor/waypoint.min.js"></script>
+    <script src="/front/assets/js/vendor/wow.min.js"></script>
+    <script src="/front/assets/js/vendor/counterup.min.js"></script>
+    <script src="/front/assets/js/vendor/feather.min.js"></script>
+    <script src="/front/assets/js/vendor/sal.min.js"></script>
+    <script src="/front/assets/js/vendor/masonry.js"></script>
+    <script src="/front/assets/js/vendor/imageloaded.js"></script>
+    <script src="/front/assets/js/vendor/magnify.min.js"></script>
+    <script src="/front/assets/js/vendor/lightbox.js"></script>
+    <script src="/front/assets/js/vendor/slick.min.js"></script>
+    <script src="/front/assets/js/vendor/easypie.js"></script>
+    <script src="/front/assets/js/vendor/text-type.js"></script>
+    <script src="/front/assets/js/vendor/jquery.style.swicher.js"></script>
+    <script src="/front/assets/js/vendor/js.cookie.js"></script>
+    <!-- Main JS -->
+    <script src="/front/assets/js/main.js"></script>
 </body>
 
-</html>
+
+ </html>

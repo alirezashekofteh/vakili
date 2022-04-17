@@ -39,8 +39,9 @@ class HomeController extends Controller
         $service = Service::where('active', '1')->limit(3)->get();
         $posts = post::where('active', '1')->latest()->limit(3)->get();
         $mainpage = MainPage::first();
-        return view('front.index', compact(['slideshow', 'products', 'service', 'posts', 'mainpage', 'company']));
-    }
+         return view('front.index', compact(['slideshow', 'products', 'service', 'posts', 'mainpage', 'company']));
+ 
+}
     public function blogs()
     {
         $posts = post::where('active', '1')->latest()->paginate(30);
