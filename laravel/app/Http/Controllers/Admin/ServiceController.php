@@ -113,7 +113,7 @@ class ServiceController extends Controller
             ]
         );
         alert()->success('ویرایش  با موفقیت انجام شد','پیغام سیستم')->persistent('تایید');
-        return redirect(route('admin.service.index'));
+        return redirect(route('admin.Service.index'));
     }
     public function changeSardabir(Request $request)
 

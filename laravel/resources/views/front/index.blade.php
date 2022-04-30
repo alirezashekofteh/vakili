@@ -25,9 +25,9 @@
             <div class="row row--30 align-items-center">
                 <div class="order-2 order-lg-1 col-lg-7">
                     <div class="inner text-left">
-                        <h1 class="title">{{$item->name}}</h1>
+                        {{-- <h1 class="title">{{$item->name}}</h1>
                         <p class="description">{{$item->tozih}}</p>
-                        <div class="button-group mt--30"><a class="btn-default" target="_blank" href="{{$item->link}}">اطلاعات بیشتر </a></div>
+                        <div class="button-group mt--30"><a class="btn-default" target="_blank" href="{{$item->link}}">اطلاعات بیشتر </a></div> --}}
                     </div>
                 </div>
             </div>
@@ -52,68 +52,24 @@
             </div>
         </div>
         <div class="row row--15 service-wrapper">
+            @foreach ($services as $item )
             <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="700">
                 <div class="service gallery-style text-left">
                     <div class="inner">
+                        <div class="image">
+                            <img src="{{$item->pic}}" alt="card Images">
+                        </div>
                         <div class="content">
                             <h4 class="title">
-                                <a href="#">طراحی جایزه </a>
+                                <a href="#">{{$item->name}} </a>
                             </h4>
-                            <p class="description">تنوع بسیاری دارد.</p>
+                            <p class="description">{{$item->content}}  .</p>
                         </div>
-                        <div class="image">
-                            <img src="/front/assets/images/services/galery-image-01.png" alt="card Images">
-                        </div>
+                      
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="700">
-                <div class="service gallery-style text-left">
-                    <div class="inner">
-                        <div class="content">
-                            <h4 class="title">
-                                <a href="#">طراحی جایزه </a>
-                            </h4>
-                            <p class="description">تنوع بسیاری دارد.</p>
-                        </div>
-                        <div class="image">
-                            <img src="/front/assets/images/services/galery-image-01.png" alt="card Images">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                <div class="service gallery-style text-left">
-                    <div class="inner">
-                        <div class="content">
-                            <h4 class="title">
-                                <a href="#">طراحی خلاق</a>
-                            </h4>
-                            <p class="description">تنوع بسیاری دارد.</p>
-                        </div>
-                        <div class="image">
-                            <img src="/front/assets/images/services/galery-image-02.png" alt="card Images">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
-                <div class="service gallery-style text-left">
-                    <div class="inner">
-                        <div class="content">
-                            <h4 class="title">
-                                <a href="#">توسعه اپ </a>
-                            </h4>
-                            <p class="description">تنوع بسیاری دارد.</p>
-                        </div>
-                        <div class="image">
-                            <img src="/front/assets/images/services/galery-image-03.png" alt="card Images">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
@@ -142,151 +98,36 @@
 
                 <div class="rwt-portfolio-filter filter-button-default messonry-button text-center mb--30">
                     <button data-filter="*" class="is-checked"><span class="filter-text">همه </span></button>
-                    <button data-filter=".cat--1"><span class="filter-text">طراحی </span></button>
-                    <button data-filter=".cat--2"><span class="filter-text">هنری </span></button>
-                    <button data-filter=".cat--3"><span class="filter-text">دیجیتال </span></button>
-                    <button data-filter=".cat--4"><span class="filter-text">توسعه وب </span></button>
+                    @foreach ($services as $item)
+                    <button data-filter=".cat--{{$item->id}}"><span class="filter-text">{{$item->name}}</span></button>
+                    @endforeach
                 </div>
 
                 <div class="portfolio-items grid-metro3 mesonry-list">
                     <div class="resizer"></div>
                     <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--1 cat--4">
+                    @foreach ($products as $item)
+                    <div class="portfolio-3  cat--{{$item->service_id}}">
                         <div class="rwt-card portfolio">
                             <div class="inner">
                                 <div class="thumbnail">
                                     <div class="card-image">
                                         <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-01.jpg" alt="Portfolio-01">
+                                            <img src="{{$item->pic}}" alt="{{$item->name}}">
                                         </a>
                                     </div>
                                     <a class="rwt-overlay" href="portfolio-details.html"></a>
                                 </div>
                                 <div class="content">
                                     <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">توسعه اپ </a>
+                                        <a href="portfolio-details.html">{{$item->name}} </a>
                                     </h5>
-                                    <span class="subtitle b2">توسعه دهنده </span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- Start Single Portfolio  -->
-
-                    <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--2 cat--3">
-                        <div class="rwt-card portfolio">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <div class="card-image">
-                                        <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-02.jpg" alt="Portfolio-01">
-                                        </a>
-                                    </div>
-                                    <a class="rwt-overlay" href="portfolio-details.html"></a>
-                                </div>
-                                <div class="content">
-                                    <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">توسعه شرکت </a>
-                                    </h5>
-                                    <span class="subtitle b2">طراحی </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Portfolio  -->
-
-                    <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--3 cat--4 cat--1">
-                        <div class="rwt-card portfolio">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <div class="card-image">
-                                        <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-03.jpg" alt="Portfolio-01">
-                                        </a>
-                                    </div>
-                                    <a class="rwt-overlay" href="portfolio-details.html"></a>
-                                </div>
-                                <div class="content">
-                                    <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">طراحی فتوشاپ</a>
-                                    </h5>
-                                    <span class="subtitle b2">هنر </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Portfolio  -->
-
-                    <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--3 cat--2">
-                        <div class="rwt-card portfolio">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <div class="card-image">
-                                        <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-04.jpg" alt="Portfolio-01">
-                                        </a>
-                                    </div>
-                                    <a class="rwt-overlay" href="portfolio-details.html"></a>
-                                </div>
-                                <div class="content">
-                                    <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">اپلیکیشن نتیو </a>
-                                    </h5>
-                                    <span class="subtitle b2">توسعه دهنده </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Portfolio  -->
-
-                    <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--2 cat--4">
-                        <div class="rwt-card portfolio">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <div class="card-image">
-                                        <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-05.jpg" alt="Portfolio-01">
-                                        </a>
-                                    </div>
-                                    <a class="rwt-overlay" href="portfolio-details.html"></a>
-                                </div>
-                                <div class="content">
-                                    <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">توسعه ری اکت </a>
-                                    </h5>
-                                    <span class="subtitle b2">اپلیکیشن </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Portfolio  -->
-
-                    <!-- Start Single Portfolio  -->
-                    <div class="portfolio-3 cat--3 cat--2 cat--1">
-                        <div class="rwt-card portfolio">
-                            <div class="inner">
-                                <div class="thumbnail">
-                                    <div class="card-image">
-                                        <a href="portfolio-details.html">
-                                            <img src="/front/assets/images/portfolio/portfolio-06.jpg" alt="Portfolio-01">
-                                        </a>
-                                    </div>
-                                    <a class="rwt-overlay" href="portfolio-details.html"></a>
-                                </div>
-                                <div class="content">
-                                    <h5 class="title mb--10">
-                                        <a href="portfolio-details.html">نصب اپلیکیشن </a>
-                                    </h5>
-                                    <span class="subtitle b2">فتوشاپ </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Start Single Portfolio  -->
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -315,7 +156,7 @@
 </div>
 <!-- End Seperator Area  -->
 
-<!-- Start progress style-large  -->
+{{-- <!-- Start progress style-large  -->
 <div class="rwt-progressbar-area rn-section-gap">
     <div class="container">
         <div class="row">
@@ -398,7 +239,7 @@
         </div>
     </div>
 </div>
-<!-- End progress style-large  -->
+<!-- End progress style-large  --> --}}
 
 <!-- Start Seperator Area  -->
 <div class="rbt-separator-mid">
@@ -478,60 +319,29 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="section-title text-center" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                    <h4 class="subtitle "><span class="theme-gradient">اخبار اخیر </span></h4>
+                    <h4 class="subtitle "><span class="theme-gradient">مقالات و خبر های اخیر</span></h4>
                 </div>
             </div>
         </div>
         <div class="row row--15">
+            @foreach ($posts as $item)
             <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700">
                 <div class="rn-card box-card-style-default">
                     <div class="inner">
-                        <div class="thumbnail"><a class="image" href="blog-details.html"><img src="/front/assets/images/blog/blog-01.jpg" alt="Blog Image"></a></div>
+                        <div class="thumbnail"><a class="image" href="blog-details.html"><img src="{{$item->pic}}" alt="{{$item->name}}"></a></div>
                         <div class="content">
                             <ul class="rn-meta-list">
-                                <li><a href="#"> ایرین پروین </a></li>
+                                <li><a href="#">{{$item->name}}</a></li>
                                 <li class="separator">/</li>
-                                <li>1400-8-9</li>
+                                <li>{{jdate($item->created_at)->format('Y-m-d')}}</li>
                             </ul>
-                            <h4 class="title"><a href="blog-details.html">بهترین نکات شرکتی که امسال درباره دوب.</a></h4>
+                            <h4 class="title"><a href="">{{$item->content}}</a></h4>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="100">
-                <div class="rn-card box-card-style-default">
-                    <div class="inner">
-                        <div class="thumbnail"><a class="image" href="blog-details.html"><img src="/front/assets/images/blog/blog-02.jpg" alt="Blog Image"></a></div>
-                        <div class="content">
-                            <ul class="rn-meta-list">
-                                <li><a href="#">جعفر عباسی</a></li>
-                                <li class="separator">/</li>
-                                <li>1400-8-9</li>
-                            </ul>
-                            <h4 class="title"><a href="blog-details.html">آیا تعمیر شرکت باید 100 گام بردارد.</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 col-12 mt--30" data-sal="slide-up" data-sal-duration="700" data-sal-delay="200">
-                <div class="rn-card box-card-style-default">
-                    <div class="inner">
-                        <div class="thumbnail">
-                            <a class="image" href="blog-details.html"><img src="/front/assets/images/blog/blog-03.jpg" alt="Blog Image"></a>
-                        </div>
-                        <div class="content">
-                            <ul class="rn-meta-list">
-                                <li><a href="#">جعفر خان عباسی </a></li>
-                                <li class="separator">/</li>
-                                <li>1400-8-9</li>
-                            </ul>
-                            <h4 class="title"><a href="blog-details.html">100 کاری که باید فوراً درباره آنها انجام دهید.</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>

@@ -7616,11 +7616,13 @@ div.btn-default {
   margin-top: 30px; }
   .service.gallery-style .content .image img {
     border-radius: 5px; }
-  .service.gallery-style .content .title {
-    margin-bottom: 19px;
-    font-weight: 600;
-    font-size: 20px;
-    margin-bottom: 10px; }
+    .service.gallery-style .content .title {
+      margin-bottom: 19px;
+      font-weight: 600;
+      font-size: 20px;
+      margin-top: 16px;
+      text-align: center;
+  }
     .service.gallery-style .content .title a {
       color: inherit; }
       .service.gallery-style .content .title a:hover {

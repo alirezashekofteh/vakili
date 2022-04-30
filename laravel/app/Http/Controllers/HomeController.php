@@ -36,10 +36,10 @@ class HomeController extends Controller
         $slideshow = Slideshow::where('active', '1')->get();
         $products = Product::where('active', '1')->latest()->limit(9)->get();
         $company = Company::where('active', '1')->latest()->limit(9)->get();
-        $service = Service::where('active', '1')->limit(3)->get();
+        $services = Service::where('active', '1')->limit(4)->get();
         $posts = post::where('active', '1')->latest()->limit(3)->get();
         $mainpage = MainPage::first();
-         return view('front.index', compact(['slideshow', 'products', 'service', 'posts', 'mainpage', 'company']));
+         return view('front.index', compact(['slideshow', 'products', 'services', 'posts', 'mainpage', 'company']));
  
 }
     public function blogs()

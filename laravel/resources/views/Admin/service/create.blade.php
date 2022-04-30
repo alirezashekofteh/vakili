@@ -65,14 +65,7 @@
                                     <input class="form-control dir-ltr" placeholder="" value="{{old('slug',$Service->slug)}}" name="slug" type="text">
                                 </div>
                             </div>
-                            <div class="row row-xs align-items-center mg-b-20">
-                                <div class="col-md-3">
-                                    <label class="form-label mg-b-0">متن اولیه :</label>
-                                </div>
-                                <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                    <textarea  class="form-control " name="content">{{old('content',$Service->content)}}</textarea>
-                                </div>
-                            </div>
+                            
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-3">
                                     <label class="form-label mg-b-0">متن کامل :</label>

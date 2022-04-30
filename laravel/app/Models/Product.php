@@ -24,7 +24,7 @@ class Product extends Model
     }
 
     protected $fillable = [
-        'name' , 'active' ,'content','comment','pic','fullcontent','slug'
+        'name' , 'active' ,'content','comment','pic','fullcontent','slug','service_id'
     ];
     public function user()
     {
@@ -34,9 +34,9 @@ class Product extends Model
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
-    public function category()
+    public function service()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Service::class);
     }
     public function images()
     {

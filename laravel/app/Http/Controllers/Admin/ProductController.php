@@ -67,12 +67,10 @@ class ProductController extends Controller
                 'active' => $request->active,
                 'comment' => $request->comment,
                 'pic'=>$request->pic,
+                'service_id'=> $request->service_id,
 
             ]
         );
-       
-       
-         $Product->category()->sync($request->category);
         alert()->success('اطلاعات با موفقیت ثبت شد','پیغام سیستم')->persistent("تایید");
         return back();
     }
@@ -120,23 +118,13 @@ class ProductController extends Controller
                 'active' => $request->active,
                 'comment' => $request->comment,
                 'pic'=>$request->pic,
+                'service_id'=> $request->service_id,
             ]
         );
-       
-        $Product->category()->sync($request->category);
         alert()->success('ویرایش  با موفقیت انجام شد','پیغام سیستم')->persistent('تایید');
         return redirect(route('admin.product.index'));
     }
-    public function changeSardabir(Request $request)
-
-    {
-
-        $Product = Product::find($request->product_id);
-        $Product->sardabir = $request->status;
-        $Product->save();
-        return response()->json(['success'=>'تغییرات با موفقیت ذخیره شد.']);
-
-    }
+   
 
     /**
      * Remove the specified resource from storage.

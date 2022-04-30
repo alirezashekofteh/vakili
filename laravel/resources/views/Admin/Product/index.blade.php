@@ -9,8 +9,8 @@
             <div class="my-auto">
                 <div class="d-flex">
                     <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin">داشبورد</a></span>
-                    <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin/agent">/لیست محصولات</a></span>
-                    <span class="text-muted mt-1 tx-13 mr-2 mb-0">/لیست محصولات</span>
+                    <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin/agent">/لیست پروژها</a></span>
+                    <span class="text-muted mt-1 tx-13 mr-2 mb-0">/لیست پروژها</span>
                 </div>
             </div>
             <div class="d-flex my-xl-auto right-content">
@@ -28,7 +28,7 @@
                 <div class="card">
                     <div class="card-header pb-0">
                         <div class="d-flex justify-content-between">
-                            <h4 class="card-title mg-b-0">لیست محصولات</h4>
+                            <h4 class="card-title mg-b-0">لیست پروژها</h4>
                             <i class="mdi mdi-dots-horizontal text-gray"></i>
                         </div>
                         <div class="row">
@@ -46,7 +46,7 @@
                             @can('product-create')
                             <div class="col-lg-2 mg-t-20 mg-lg-t-0">
                                 <a href="{{route('admin.product.create')}}" class="btn btn-indigo btn-with-icon btn-block"><i
-                                        class='bx bxs-user-plus bx-sm'></i>افزودن محصول جدید</a>
+                                        class='bx bxs-user-plus bx-sm'></i>افزودن پروژه جدید</a>
                             </div>
                             @endcan
                           
@@ -58,6 +58,7 @@
                             <table class="table table-striped mg-b-0 text-md-nowrap">
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>عنوان</th>
                                         <th>نویسنده</th>
                                         <th>نمایش در سایت</th>
@@ -71,7 +72,7 @@
                                 <tbody>
                                     @foreach ($Product as $item)
                                     <tr class="success">
-                                        <td>{{ $item->id}}</td>
+                                        <td>{{ $loop->index +1}}</td>
                                         <td>{{ $item->name}}</td>
                                         <td>{{$item->user->nf}}</td>
                                         <td>{{config('value.truefalse.'.$item->active)}}</td>

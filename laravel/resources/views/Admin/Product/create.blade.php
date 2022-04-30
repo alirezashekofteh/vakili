@@ -12,7 +12,7 @@
             <div class="my-auto">
                 <div class="d-flex">
                     <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin">داشبورد</a></span>
-                    <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin/product">لیست محصولات</a></span>
+                    <span class="text-muted mt-1 tx-13 mr-2 mb-0"><a href="/admin/product">لیست پروژها</a></span>
                     <span class="text-muted mt-1 tx-13 mr-2 mb-0">افزودن -ویرایش</span>
                 </div>
             </div>
@@ -84,13 +84,13 @@
                             </div>
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-3">
-                                    <label class="form-label mg-b-0">انتخاب دسته بندی :</label>
+                                    <label class="form-label mg-b-0">انتخاب  خدمت :</label>
                                 </div>
                                 <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                    <select class="form-control" name="category[]" multiple>
-                                        @foreach (\App\Models\Category::all()
+                                    <select class="form-control" name="service_id">
+                                        @foreach (\App\Models\Service::all()
                                         as $item)
-                                        <option value="{{$item->id}}" {{ in_array($item->id , $product->category->pluck('id')->toArray()) ? 'selected' : '' }}>{{ $item->name}}</option>
+                                        <option value="{{$item->id}}" {{ ($item->id == $product->service_id) ? 'selected' : '' }}>{{ $item->name}}</option>
     
                                         @endforeach
                                     </select>
@@ -112,7 +112,7 @@
                           
                             <div class="row row-xs align-items-center mg-b-20">
                                 <div class="col-md-3">
-                                    <label class="form-label mg-b-0">فعال بودن محصول :</label>
+                                    <label class="form-label mg-b-0">فعال بودن پروژه :</label>
                                 </div>
                                 <div class="col-md-9 mg-t-5 mg-md-t-0">
                                     <select class="form-control" name="active">
